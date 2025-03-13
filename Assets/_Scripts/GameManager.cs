@@ -6,7 +6,6 @@ using UnityEngine;
 public class GameManager : SingletonMonoBehavior<GameManager>
 {
     [SerializeField] private int score = 0;
-    [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private CoinCounterUI coinCounter;
     [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject settingsMenu;
@@ -23,6 +22,13 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         inputManager.OnSettingsMenu.AddListener(ToggleSettingsMenu);
         DisableSettingsMenu();
     }
+
+    public void IncreaseScore()
+    {
+        score++;
+        coinCounter.UpdateScore(score);
+    }
+
     private void ToggleSettingsMenu()
     {
         if (isSettingsMenuActive) DisableSettingsMenu();
@@ -45,18 +51,14 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         Cursor.visible = false;
         isSettingsMenuActive = false;
     }
-    public void IncreaseScore()
-    {
-        score++;
-        coinCounter.UpdateScore(score);
-    }
+    
 
     public void QuitGame()
     {
         # if UNITY_EDITOR
-        EditorApplication.isPlaying = false;
+            EditorApplication.isPlaying = false;
         # else
-        Application.Quit();
+            Application.Quit();
         # endif
      }
 }

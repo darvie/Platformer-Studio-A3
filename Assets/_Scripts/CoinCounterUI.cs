@@ -17,6 +17,7 @@ public class CoinCounterUI : MonoBehaviour
 
     void Start()
     {
+        Canvas.ForceUpdateCanvases();
         current.SetText("0");
         toUpdate.SetText("0");
         containerInitPosition = coinTextContainer.localPosition.y;
