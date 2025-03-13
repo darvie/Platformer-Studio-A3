@@ -4,8 +4,8 @@ A simple third person character controller in Unity
 
 ## Demo
 
-https://github.com/user-attachments/assets/91485280-b86b-4c82-ac11-2a5107730e94
-
+[https://github.com/user-attachments/assets/91485280-b86b-4c82-ac11-2a5107730e94
+](https://github.com/darvie/Platformer-Studio-A3/blob/main/PlatformerDemo.mp4)
 ## Cloning & Setting Up the Project
 
 1. Ensure you have
